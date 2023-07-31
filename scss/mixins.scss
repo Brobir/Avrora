@@ -1,0 +1,36 @@
+@mixin imgBack($imgUrl: "", $colorBack: transparent){
+  background-color: $colorBack;
+  background-image: url($imgUrl);
+  background-origin: content-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin font($fontColor: $blackText, $fontSize: 14px, $fontLHeight: 21px, $fontWeight: normal, $fontStyle: normal){
+  color: $fontColor;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $fontLHeight;
+}
+@mixin dispFlex($flexDir: row, $flexAlIt: stretch, $flexJusCon: stretch){
+  display: flex;
+  flex-direction: $flexDir;
+  align-items: $flexAlIt;
+  justify-content: $flexJusCon;
+}
+@mixin link($linkColor: $whiteText1, $linkVis: $whiteText1, $linkHov: $whiteText1, $linkAct: $whiteText1){
+  a {
+   color: $whiteText1;
+   text-decoration: none;
+   &:visited {
+    color: $whiteText1;
+   }
+   &:hover {
+    color: $whiteText1;
+   }
+   &:active {
+    color: $whiteText1;
+   }
+  }
+}

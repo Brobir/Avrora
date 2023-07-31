@@ -1,0 +1,367 @@
+@import "mixins";
+@import "variables";
+
+.slider-box{
+    @include dispFlex($flexAlIt: center, $flexJusCon: center);
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .slider-items{
+      @include dispFlex($flexDir: column, $flexJusCon: space-between);
+
+        width: 100%;
+        height: 690px;
+        overflow: hidden;
+        position: relative;
+
+        .slider-track{
+            @include dispFlex($flexAlIt: center, $flexJusCon: space-between);
+
+            width: auto;
+            height: 100%;
+            position: absolute;
+            transition: .2s;
+            user-select: none;
+            z-index: 1;
+        }
+    }
+}
+#sliderKatalog{
+  .dots-layouts{
+    @include dispFlex($flexAlIt: center, $flexJusCon: center);
+    margin-bottom: 60px;
+
+    .dots{
+      width: 6px;
+      height: 4.07px;
+      background: $secondaryText;
+      border-radius: 2px;
+      margin: 8px;
+      cursor: pointer;
+      transition: .2s;
+      z-index: 2;
+    }
+    .dots.active{
+      width: 24px;
+      background: $brandText;
+    }
+  }
+  .btn{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 57.03px;
+      background: $blackBack;
+      border-radius: 4px;
+      z-index: 2;
+      transition: .2s;
+      cursor: pointer;
+
+      &:hover{
+        background: $brandBack;
+      }
+
+      svg{
+        fill: $whiteText1;
+        width: 12px;
+        height: 12px;
+      }
+  }
+  .btn.btnPrev{
+    left: 50px;
+
+    svg{
+      transform: rotate(180deg);
+    }
+  }
+  .btn.btnNext{
+    right: 50px;
+  }
+  .btn.disabled{
+      opacity: .4;
+  }
+
+  .dots-layoutsKatalog{
+      z-index: 2;
+      // margin-bottom: 20px;
+
+      .katalog{
+          @include dispFlex($flexAlIt: center, $flexJusCon: center);
+
+          .katalog-item{
+            @include font($fontColor: $blackText, $fontSize: 14px, $fontLHeight: 17px, $fontWeight: 600);
+            @include dispFlex($flexAlIt: center, $flexJusCon: center);
+
+            width: 238px;
+            height: 57.03px;
+            background: $whiteBack;
+            border-radius: 4px;
+            margin-right: 12px;
+            transition: .2s;
+            cursor: pointer;
+            user-select: none;
+
+            &:last-of-type{
+              margin-right: 0;
+            }
+          }
+
+          .katalog-item.active{
+              color: $brandText;
+          }
+      }
+  }
+
+  .slider-items{
+    height: 730px;
+    width: 80%;
+    margin-top: 70px;
+  }
+
+  .slider-item{
+      @include dispFlex($flexAlIt: center, $flexJusCon: flex-start);
+
+      width: 554px;
+      height: 514px;
+
+      .box{
+          @include dispFlex($flexDir: column, $flexAlIt: flex-start, $flexJusCon: space-between);
+
+          width: 514px;
+          height: 514px;
+          background: $whiteBack;
+          border-radius: 4px 4px 4px 64px;
+          position: relative;
+          box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.04);
+          transition: .2s;
+
+          .box_img{
+            border-radius: 4px 4px 32px 4px;
+            width: 100%;
+            height: 256px;
+            margin-bottom: 83px;
+          }
+          .box_desc{
+              display: none;
+              @include font($fontColor: $secondaryText, $fontSize: 12px, $fontLHeight: 21px, $fontWeight: 600);
+
+              letter-spacing: 0.2em;
+              margin-bottom: 9px;
+              margin-left: 58.5px;
+              transition: .2s;
+          }
+          .box_title{
+              @include font($fontColor: $blackText, $fontSize: 24px, $fontLHeight: 29px, $fontWeight: 600);
+
+              width: 148px;
+              display: block;
+              margin-left: 58.5px;
+              transition: .2s;
+              margin-bottom: 72px;
+          }
+      }
+      .box.active{
+        background: #C4C4C4;
+        box-shadow: 0px 15px 30px #DADADA;
+
+        .box_logo{
+          color: #FFFFFF;
+        }
+      }
+
+      &:nth-child(1){
+        .box{
+          .box_img{
+            @include imgBack($imgUrl: "../img/slider2/item (9).png");
+          }
+        }
+      }
+      &:nth-child(2){
+        .box{
+          .box_img{
+            @include imgBack($imgUrl: "../img/slider2/item (8).png");
+          }
+        }
+      }
+      &:nth-child(3){
+        .box{
+          .box_img{
+            @include imgBack($imgUrl: "../img/slider2/item (7).png");
+          }
+        }
+      }
+      &:nth-child(4){
+        .box{
+          .box_img{
+            @include imgBack($imgUrl: "../img/slider2/item (1).png");
+          }
+        }
+      }
+      &:nth-child(5){
+        .box{
+          .box_img{
+            @include imgBack($imgUrl: "../img/slider2/item (10).png");
+          }
+        }
+      }
+  }
+}
+#sliderPrimary{
+  .dots-layouts{
+    @include dispFlex($flexAlIt: center, $flexJusCon: center);
+
+    position: absolute;
+    bottom: 98px;
+    right: 290px;
+
+    .dots{
+      width: 6px;
+      height: 4.07px;
+      background: $secondaryText;
+      border-radius: 2px;
+      margin: 8px;
+      cursor: pointer;
+      transition: .2s;
+      z-index: 2;
+    }
+    .dots.active{
+      width: 24px;
+      background: $brandText;
+    }
+  }
+
+  .btn{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 56px;
+      border: 2px solid $brandText;
+      box-sizing: border-box;
+      border-radius: 4px 4px 24px 4px;
+      z-index: 2;
+      transition: .2s;
+      cursor: pointer;
+      bottom: 80px;
+
+      svg{
+        fill: $whiteText1;
+        width: 12px;
+        height: 12px;
+      }
+  }
+  .btn.btnPrev{
+    right: 184px;
+    transform: rotate(180deg);
+  }
+  .btn.btnNext{
+    right: 120px;
+  }
+  .btn.disabled{
+      opacity: .5;
+  }
+
+  .slider-items{
+    height: 100%;
+
+    .slider-track{
+      margin: 0;
+      transition: none;
+
+      .slider-item{
+          @include dispFlex($flexAlIt: center, $flexJusCon: flex-start);
+
+          width: 100%;
+          height: 100%;
+          background-color: rgba(196, 196, 196, 0.3);
+
+          .box{
+              @include dispFlex($flexDir: column, $flexAlIt: flex-start, $flexJusCon: flex-end);
+
+              width: 100%;
+              height: 100%;
+              background: $whiteBack;
+              border-radius: 0px 0px 64px 0px;
+              position: relative;
+              box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.04);
+              transition: .2s;
+              position: relative;
+
+              .evr{
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 96px;
+                z-index: 2;
+
+                img{
+                  margin: 0 0 12px;
+                }
+
+                span{
+                  text-align: center;
+
+                  span{
+                    margin-top: 8px;
+                  }
+                }
+              }
+              .box_title{
+                @include font($fontColor: $whiteText1, $fontSize: 56px, $fontLHeight: 60px, $fontWeight: 300);
+
+                width: 584px;
+                display: block;
+                margin-left: 120px;
+                margin-bottom: 40px;
+                z-index: 2;
+
+                span.brand{
+                  font-weight: 600px;
+                }
+              }
+              .buttonBorder{
+                margin-left: 120px;
+                margin-bottom: 80px;
+                border: 2px solid $brandText;
+                z-index: 2;
+
+                .buttonBorder-arrow{
+                  border-left: 2px solid $brandText;
+                }
+              }
+
+              .shadow{
+                z-index: 1;
+                border-radius: 0px 0px 64px 0px;
+              }
+          }
+          &:nth-child(1){
+            .box{
+              @include imgBack($imgUrl: "../img/slider1/item (1).png");
+            }
+          }
+          &:nth-child(2){
+            .box{
+              @include imgBack($imgUrl: "../img/slider1/item (2).png");
+            }
+          }
+          &:nth-child(3){
+            .box{
+              @include imgBack($imgUrl: "../img/slider1/item (3).png");
+            }
+          }
+          &:nth-child(4){
+            .box{
+              @include imgBack($imgUrl: "../img/slider1/item (4).png");
+            }
+          }
+      }
+    }
+  }
+}
